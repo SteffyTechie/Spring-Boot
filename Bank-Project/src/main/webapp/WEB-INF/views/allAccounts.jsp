@@ -2,30 +2,62 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.Bank.Project.model.Account" %>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Accounts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20px;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
         }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
         table {
+            width: 80%;
+            max-width: 800px;
             margin: 0 auto;
             border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-        table, th, td {
-            border: 1px solid black;
-            padding: 10px;
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
         }
+
         th {
             background-color: #f2f2f2;
+            font-weight: bold;
         }
+
+        td {
+            background-color: #fff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
         .button-container {
             margin-top: 20px;
         }
+
         .button {
             background-color: #4CAF50;
             color: white;
@@ -36,14 +68,37 @@
             font-size: 14px;
             border-radius: 5px;
         }
+
         .button:hover {
             background-color: #45a049;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <h2>All Accounts</h2>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Account Number</th>
@@ -55,7 +110,7 @@
             <%
                 // Retrieve the accounts list from the request
                 List<Account> accounts = (List<Account>) request.getAttribute("accounts");
-                if (accounts != null) {
+                if (accounts != null && !accounts.isEmpty()) {
                     for (Account account : accounts) {
             %>
                 <tr>
@@ -75,8 +130,7 @@
             %>
         </tbody>
     </table>
-    <br>
-    <a href="/">Go to Home</a> <!-- Link to go back to the home page -->
+
+    <a href="/" class="home-link">Go to Home</a>
 </body>
 </html>
-

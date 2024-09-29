@@ -24,6 +24,7 @@ public class AccountController {
     @PostMapping("/add")
     public ModelAndView addAccount(@ModelAttribute Account account) {
         ModelAndView mav = new ModelAndView("accountSuccess");
+        accountService.addAccount(account.getAccNo(), account.getAccName(), account.getBalance(), account.getPin());
         mav.addObject("message","Account added Succesfully");
         //mav.addObject("account", accountService.addAccount(account.getAccNo(), account.getAccName(), account.getBalance(), account.getPin()));
         return mav;
@@ -37,11 +38,16 @@ public class AccountController {
 
     // Handle debit amount using @ModelAttribute
     @PostMapping("/debit")
-    public ModelAndView debitAmount(@ModelAttribute Account account) {
+    public ModelAndView debitAmount(@ModelAttribute Account account,@RequestParam("amount") double amount) {
         ModelAndView mav = new ModelAndView("accountSuccess");
-        mav.addObject("message","Debited Succesfully");
-      //  mav.addObject("account", accountService.debitAmount(account.getAccNo(), account.getPin(), account.getBalance())); // using balance as debit amount
-        return mav;
+
+        // Call the service method and capture the message
+//        String message = accountService.debitAmount(account.getAccNo(), account.getPin(), account.getBalance());
+        String message = accountService.debitAmount(account.getAccNo(), account.getPin(),amount);
+        // Add the message to the ModelAndView object
+        mav.addObject("message", message);
+
+        return mav; // Return the ModelAndView to be rendered
     }
 
     // Show form to credit amount
@@ -52,10 +58,10 @@ public class AccountController {
 
     // Handle credit amount using @ModelAttribute
     @PostMapping("/credit")
-    public ModelAndView creditAmount(@ModelAttribute Account account) {
+    public ModelAndView creditAmount(@ModelAttribute Account account,@RequestParam("amount") double amount) {
         ModelAndView mav = new ModelAndView("accountSuccess");
-        mav.addObject("message","Credited Succesfully");
-       // mav.addObject("account", accountService.creditAmount(account.getAccNo(), account.getBalance())); // using balance as credit amount
+       String message= accountService.creditAmount(account.getAccNo(), amount);
+        mav.addObject("message",message);
         return mav;
     }
 

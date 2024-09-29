@@ -9,12 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class PageController {
     @GetMapping("/")
     public String showAddAccountForm() {
-
         return "welcome";
     }
-  @GetMapping("/addaccount")
-   public String addAccount(){
-        return "addAccount";
-    }
-
 }
+
+
