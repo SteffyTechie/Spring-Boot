@@ -18,7 +18,7 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #4A6FA5; /* Light navy blue for heading */
             margin-bottom: 20px;
         }
 
@@ -49,7 +49,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #4A6FA5; /* Light navy blue background for submit button */
             color: white;
             padding: 10px;
             border: none;
@@ -61,7 +61,19 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #3b5a84; /* Darker light navy blue on hover */
+        }
+
+        a.back-link {
+            display: block;
+            margin-top: 20px;
+            color: #4A6FA5; /* Light navy blue for the back link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.back-link:hover {
+            color: #3b5a84; /* Darker light navy blue on hover */
         }
 
         @media (max-width: 600px) {
@@ -73,7 +85,7 @@
 </head>
 <body>
     <h2>Debit Account</h2>
-    <form action="${pageContext.request.contextPath}/debit" method="post">
+    <form action="/debitAcc" method="post">
         <label for="accNo">Account Number:</label>
         <input type="text" id="accNo" name="accNo" required>
 
@@ -85,5 +97,8 @@
 
         <input type="submit" value="Debit">
     </form>
+
+    <a class="back-link" href="/home">Go back</a>
+
 </body>
 </html>

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -11,11 +13,16 @@ import lombok.Setter;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
+
+    @Column(unique = true) // Enforce unique constraint in the database
     private String accNo;
-    private String accName;  // Add this field for account name
+
+    private String accName;
+    private double balance;          // Add this field for account name
     private String pin;
-    private double balance;
 
-
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Transaction> transactions;
 }

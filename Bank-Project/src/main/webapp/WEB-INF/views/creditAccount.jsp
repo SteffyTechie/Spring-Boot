@@ -18,7 +18,7 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #4A6FA5; /* Light navy blue for heading */
             margin-bottom: 20px;
         }
 
@@ -48,7 +48,7 @@
 
         input[type="submit"] {
             width: 100%;
-            background-color: #4CAF50;
+            background-color: #4A6FA5; /* Light navy blue background for submit button */
             color: white;
             border: none;
             padding: 12px;
@@ -58,25 +58,25 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #3b5a84; /* Darker light navy blue on hover */
         }
 
-        .home-link {
+        .back-link {
             display: inline-block;
             margin-top: 20px;
             font-size: 14px;
-            color: #333;
+            color: #4A6FA5; /* Light navy blue for link */
             text-decoration: none;
         }
 
-        .home-link:hover {
+        .back-link:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <h2>Credit Account</h2>
-    <form action="credit" method="post">
+    <form action="/creditAcc" method="post">
         <label for="accNo">Account Number:</label>
         <input type="text" id="accNo" name="accNo" required>
 
@@ -86,6 +86,6 @@
         <input type="submit" value="Credit">
     </form>
 
-    <a href="/" class="home-link">Go to Home</a>
+    <a class="back-link" href="/home">Go back</a>
 </body>
 </html>

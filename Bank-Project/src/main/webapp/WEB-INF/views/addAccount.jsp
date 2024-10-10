@@ -7,8 +7,8 @@
     <title>Add Account</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9; /* Light gray background */
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,27 +18,25 @@
         }
 
         .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 400px;
+            text-align: center;
         }
 
         h2 {
-            color: #4CAF50;
-            text-align: center;
+            color: #4A6FA5; /* Light navy blue for heading */
             margin-bottom: 20px;
         }
 
         label {
             display: block;
+            text-align: left;
             margin-bottom: 8px;
             font-weight: bold;
-        }
-
-        form {
-            margin-top: 20px;
+            color: #343a40; /* Dark gray for labels */
         }
 
         .form-control {
@@ -48,21 +46,40 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #4A6FA5; /* Light navy blue border on focus */
+            outline: none;
         }
 
         input[type="submit"] {
             width: 100%;
-            background-color: #4CAF50;
+            background-color: #4A6FA5; /* Light navy blue background for the button */
             color: white;
             border: none;
             padding: 12px 20px;
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #3b5a84; /* Darker light navy blue on hover */
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #4A6FA5; /* Light navy blue for the back link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #3b5a84; /* Darker light navy blue on hover */
         }
     </style>
 </head>
@@ -84,6 +101,7 @@
 
             <input type="submit" value="Add Account" />
         </form:form>
+        <a class="back-link" href="/home">Go back</a>
     </div>
 </body>
 </html>

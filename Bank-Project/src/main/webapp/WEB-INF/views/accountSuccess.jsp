@@ -27,7 +27,7 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #4A6FA5; /* Light navy blue for heading */
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -43,7 +43,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #4A6FA5; /* Light navy blue background */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -54,13 +54,13 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #3b5a84; /* Darker light navy blue on hover */
         }
 
         .home-link {
             display: inline-block;
             margin-top: 20px;
-            color: #333;
+            color: #4A6FA5; /* Light navy blue for link */
             text-decoration: none;
             font-size: 14px;
         }
@@ -72,9 +72,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>${message}</h2>
-        <p>Your transaction was successful!</p>
-        <form action="/" method="get">
+        <!-- Success Message -->
+        <div class="message success">
+            ${message}
+        </div>
+
+        <!-- Error Message -->
+        <div class="message error">
+            ${errorMessage}
+        </div>
+
+        <!-- Button to Go Back to Home Page -->
+        <form action="/home" method="get">
             <input type="submit" value="Go to Home">
         </form>
     </div>

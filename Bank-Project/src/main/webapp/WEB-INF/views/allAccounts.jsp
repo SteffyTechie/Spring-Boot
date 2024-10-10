@@ -22,7 +22,7 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #4A6FA5; /* Light navy blue for heading */
             margin-bottom: 20px;
         }
 
@@ -59,7 +59,7 @@
         }
 
         .button {
-            background-color: #4CAF50;
+            background-color: #4A6FA5; /* Light navy blue for button */
             color: white;
             padding: 10px 20px;
             margin: 10px;
@@ -70,18 +70,19 @@
         }
 
         .button:hover {
-            background-color: #45a049;
+            background-color: #3b5a84; /* Darker navy blue on hover */
         }
 
         .home-link {
             display: inline-block;
             margin-top: 20px;
             font-size: 14px;
-            color: #333;
+            color: #4A6FA5; /* Light navy blue for home link */
             text-decoration: none;
         }
 
         .home-link:hover {
+            color: #3b5a84; /* Darker navy blue on hover */
             text-decoration: underline;
         }
 
@@ -131,6 +132,6 @@
         </tbody>
     </table>
 
-    <a href="/" class="home-link">Go to Home</a>
+    <a href="/home" class="home-link">Go to Home</a>
 </body>
 </html>
